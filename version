@@ -1,0 +1,43 @@
+VIM - Vi IMproved 8.1 (2018 May 18, compiled Sep  1 2018 04:43:30)
+Included patches: 1-127
+Compiled by Gronjibator
+Huge version without GUI.  Features included (+) or not (-):
++acl               +farsi             +mouse_sgr         -tag_any_white
++arabic            +file_in_path      -mouse_sysmouse    -tcl
++autocmd           +find_in_path      +mouse_urxvt       +termguicolors
+-autoservername    +float             +mouse_xterm       +terminal
+-balloon_eval      +folding           +multi_byte        +terminfo
++balloon_eval_term -footer            +multi_lang        +termresponse
+-browse            +fork()            -mzscheme          +textobjects
+++builtin_terms    +gettext           +netbeans_intg     +timers
++byte_offset       -hangul_input      +num64             +title
++channel           +iconv             +packages          -toolbar
++cindent           +insert_expand     +path_extra        +user_commands
+-clientserver      +job               +perl              +vartabs
+-clipboard         +jumplist          +persistent_undo   +vertsplit
++cmdline_compl     +keymap            +postscript        +virtualedit
++cmdline_hist      +lambda            +printer           +visual
++cmdline_info      +langmap           +profile           +visualextra
++comments          +libcall           -python            +viminfo
++conceal           +linebreak         +python3           +vreplace
++cryptv            +lispindent        +quickfix          +wildignore
++cscope            +listcmds          +reltime           +wildmenu
++cursorbind        +localmap          +rightleft         +windows
++cursorshape       +lua               +ruby              +writebackup
++dialog_con        +menu              +scrollbind        -X11
++diff              +mksession         +signs             -xfontset
++digraphs          +modify_fname      +smartindent       -xim
+-dnd               +mouse             +startuptime       -xpm
+-ebcdic            -mouseshape        +statusline        -xsmp
++emacs_tags        +mouse_dec         -sun_workshop      -xterm_clipboard
++eval              +mouse_gpm         +syntax            -xterm_save
++ex_extra          -mouse_jsbterm     +tag_binary        
++extra_search      +mouse_netterm     +tag_old_static    
+   system vimrc file: "$VIM/vimrc"
+     user vimrc file: "$HOME/.vimrc"
+ 2nd user vimrc file: "~/.vim/vimrc"
+      user exrc file: "$HOME/.exrc"
+       defaults file: "$VIMRUNTIME/defaults.vim"
+  fall-back for $VIM: "/usr/share/vim"
+Compilation: gcc -c -I. -Iproto -DHAVE_CONFIG_H     -Ofast -fPIC -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1       
+Linking: gcc   -L. -fstack-protector -rdynamic -Wl,-export-dynamic -Wl,-E -Wl,-rpath,/usr/lib64/perl5/CORE   -L/usr/local/lib -Wl,--as-needed -o vim        -lm -ltinfo -lelf -lnsl   -lacl -lattr -lgpm -ldl  -L/usr/lib -llua -Wl,-E -Wl,-rpath,/usr/lib64/perl5/CORE  -fstack-protector-strong -L/usr/local/lib  -L/usr/lib64/perl5/CORE -lperl -lpthread -lnsl -ldl -lm -lcrypt -lutil -lc  -L/usr/lib64/python3.6/config-3.6m-x86_64-linux-gnu -lpython3.6m -lpthread -ldl -lutil -lm  -Wl,-rpath,/usr/lib64 -L/usr/lib64 -lruby -lpthread -lgmp -ldl -lcrypt -lm     
