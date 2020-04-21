@@ -1,43 +1,48 @@
-VIM - Vi IMproved 8.1 (2018 May 18, compiled Sep  1 2018 04:43:30)
-Included patches: 1-127
+VIM - Vi IMproved 8.2 (2019 Dec 12, compiled Dec 16 2019 09:48:30)
+Included patches: 1-12
 Compiled by Gronjibator
-Huge version without GUI.  Features included (+) or not (-):
-+acl               +farsi             +mouse_sgr         -tag_any_white
-+arabic            +file_in_path      -mouse_sysmouse    -tcl
-+autocmd           +find_in_path      +mouse_urxvt       +termguicolors
--autoservername    +float             +mouse_xterm       +terminal
--balloon_eval      +folding           +multi_byte        +terminfo
-+balloon_eval_term -footer            +multi_lang        +termresponse
--browse            +fork()            -mzscheme          +textobjects
-++builtin_terms    +gettext           +netbeans_intg     +timers
-+byte_offset       -hangul_input      +num64             +title
-+channel           +iconv             +packages          -toolbar
-+cindent           +insert_expand     +path_extra        +user_commands
--clientserver      +job               +perl              +vartabs
--clipboard         +jumplist          +persistent_undo   +vertsplit
-+cmdline_compl     +keymap            +postscript        +virtualedit
-+cmdline_hist      +lambda            +printer           +visual
-+cmdline_info      +langmap           +profile           +visualextra
-+comments          +libcall           -python            +viminfo
-+conceal           +linebreak         +python3           +vreplace
-+cryptv            +lispindent        +quickfix          +wildignore
-+cscope            +listcmds          +reltime           +wildmenu
-+cursorbind        +localmap          +rightleft         +windows
-+cursorshape       +lua               +ruby              +writebackup
-+dialog_con        +menu              +scrollbind        -X11
-+diff              +mksession         +signs             -xfontset
-+digraphs          +modify_fname      +smartindent       -xim
--dnd               +mouse             +startuptime       -xpm
--ebcdic            -mouseshape        +statusline        -xsmp
-+emacs_tags        +mouse_dec         -sun_workshop      -xterm_clipboard
-+eval              +mouse_gpm         +syntax            -xterm_save
-+ex_extra          -mouse_jsbterm     +tag_binary        
-+extra_search      +mouse_netterm     +tag_old_static    
+Huge version with GTK2 GUI.  Features included (+) or not (-):
++acl               -farsi             -mouse_sysmouse    -tag_old_static
++arabic            +file_in_path      +mouse_urxvt       -tag_any_white
++autocmd           +find_in_path      +mouse_xterm       +tcl
++autochdir         +float             +multi_byte        +termguicolors
+-autoservername    +folding           +multi_lang        +terminal
++balloon_eval      -footer            -mzscheme          +terminfo
++balloon_eval_term +fork()            +netbeans_intg     +termresponse
++browse            +gettext           +num64             +textobjects
+++builtin_terms    -hangul_input      +packages          +textprop
++byte_offset       +iconv             +path_extra        +timers
++channel           +insert_expand     +perl              +title
++cindent           +job               +persistent_undo   +toolbar
++clientserver      +jumplist          +popupwin          +user_commands
++clipboard         +keymap            +postscript        +vartabs
++cmdline_compl     +lambda            +printer           +vertsplit
++cmdline_hist      +langmap           +profile           +virtualedit
++cmdline_info      +libcall           -python            +visual
++comments          +linebreak         +python3           +visualextra
++conceal           +lispindent        +quickfix          +viminfo
++cryptv            +listcmds          +reltime           +vreplace
++cscope            +localmap          +rightleft         +wildignore
++cursorbind        +lua               +ruby              +wildmenu
++cursorshape       +menu              +scrollbind        +windows
++dialog_con_gui    +mksession         +signs             +writebackup
++diff              +modify_fname      +smartindent       +X11
++digraphs          +mouse             +sound             -xfontset
++dnd               +mouseshape        +spell             +xim
+-ebcdic            +mouse_dec         +startuptime       +xpm
++emacs_tags        +mouse_gpm         +statusline        +xsmp_interact
++eval              -mouse_jsbterm     -sun_workshop      +xterm_clipboard
++ex_extra          +mouse_netterm     +syntax            -xterm_save
++extra_search      +mouse_sgr         +tag_binary        
    system vimrc file: "$VIM/vimrc"
      user vimrc file: "$HOME/.vimrc"
  2nd user vimrc file: "~/.vim/vimrc"
       user exrc file: "$HOME/.exrc"
+  system gvimrc file: "$VIM/gvimrc"
+    user gvimrc file: "$HOME/.gvimrc"
+2nd user gvimrc file: "~/.vim/gvimrc"
        defaults file: "$VIMRUNTIME/defaults.vim"
+    system menu file: "$VIMRUNTIME/menu.vim"
   fall-back for $VIM: "/usr/share/vim"
-Compilation: gcc -c -I. -Iproto -DHAVE_CONFIG_H     -Ofast -fPIC -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1       
-Linking: gcc   -L. -fstack-protector -rdynamic -Wl,-export-dynamic -Wl,-E -Wl,-rpath,/usr/lib64/perl5/CORE   -L/usr/local/lib -Wl,--as-needed -o vim        -lm -ltinfo -lelf -lnsl   -lacl -lattr -lgpm -ldl  -L/usr/lib -llua -Wl,-E -Wl,-rpath,/usr/lib64/perl5/CORE  -fstack-protector-strong -L/usr/local/lib  -L/usr/lib64/perl5/CORE -lperl -lpthread -lnsl -ldl -lm -lcrypt -lutil -lc  -L/usr/lib64/python3.6/config-3.6m-x86_64-linux-gnu -lpython3.6m -lpthread -ldl -lutil -lm  -Wl,-rpath,/usr/lib64 -L/usr/lib64 -lruby -lpthread -lgmp -ldl -lcrypt -lm     
+Compilation: gcc -c -I. -Iproto -DHAVE_CONFIG_H -DFEAT_GUI_GTK  -pthread -I/usr/include/gtk-2.0 -I/usr/lib64/gtk-2.0/include -I/usr/include/pango-1.0 -I/usr/include/atk-1.0 -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/pango-1.0 -I/usr/include/fribidi -I/usr/include/uuid -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/harfbuzz -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include   -Os -fPIC -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1       
+Linking: gcc   -L. -fstack-protector-strong -rdynamic -Wl,-export-dynamic -Wl,-E -Wl,-rpath,/usr/lib64/perl5/CORE   -L/usr/local/lib -Wl,--as-needed -o vim   -lgtk-x11-2.0 -lgdk-x11-2.0 -lpangocairo-1.0 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lpangoft2-1.0 -lpango-1.0 -lgobject-2.0 -lglib-2.0 -lfontconfig -lfreetype -lSM -lICE -lXpm -lXt -lX11 -lXdmcp -lSM -lICE  -lm -ltinfo -lelf -lnsl   -lcanberra -lacl -lattr -lgpm -ldl  -L/usr/lib -llua -Wl,-E -Wl,-rpath,/usr/lib64/perl5/CORE  -fstack-protector-strong -L/usr/local/lib  -L/usr/lib64/perl5/CORE -lperl -lpthread -lnsl -ldl -lm -lcrypt -lutil -lc  -L/usr/lib64/python3.7/config-3.7m-x86_64-linux-gnu -lpython3.7m -lcrypt -lpthread -ldl -lutil -lm -L/usr/lib64 -ltcl8.6 -ldl -lz -lpthread -lm -Wl,-rpath,/usr/lib64 -L/usr/lib64 -lruby -lm     

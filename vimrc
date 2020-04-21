@@ -31,16 +31,26 @@ call vundle#begin()
 
     Plugin 'VundleVim/Vundle.vim'
     Plugin 'rdnetto/YCM-Generator'
- 
-    " Plugin 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
-    " Plugin 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
+    Plugin 'neoclide/coc.nvim'
 
-    Plugin 'Valloric/YouCompleteMe'
+    " Plugin 'prabirshrestha/async.vim'
+    " Plugin 'prabirshrestha/vim-lsp'
+
+    Plugin 'jackguo380/vim-lsp-cxx-highlight'
+
+    Plugin 'psf/black'
+ 
+    " Plugin 'neoclide/coc.nvim', 'do': 'yarn install --frozen-lockfile'
+    " Plugin 'neoclide/coc.nvim', 'tag': '*', 'branch': 'release'
+
+    " Plugin 'Valloric/YouCompleteMe'
     " Bundle 'Shougo/neocomplete.vim'
     " Plugin 'Syntastic'
     Plugin 'tpope/vim-commentary'
     Plugin 'tpope/vim-unimpaired'
     Plugin 'scrooloose/nerdtree'
+    Bundle 'rs-rohan/vim-nerdtree-tabs'
+
     Bundle 'airblade/vim-gitgutter'
     " Plugin 'itchyny/lightline.vim'
     Plugin 'j5shi/SearchComplete'
@@ -84,6 +94,8 @@ call vundle#begin()
     " Browser edit
     Plugin 'glacambre/firenvim'
 
+    Plugin 'rust-lang/rust.vim'
+
 call vundle#end()           
 " }
 
@@ -121,13 +133,19 @@ if !has("nvim")
     silent execute "set <M-y>=\ey"
 endif
 
-" Youcompleteme config { 
+" Youcompleteme config  {
 " let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_auto_trigger = 1
-let g:ycm_python_binary_path = "/usr/bin/python3"
+" let g:ycm_python_binary_path = "/usr/bin/python3"
+
+" }
+
+" coc.vim {
+
+let g:lsp_cxx_hl_use_text_props = 1
 
 " }
 
@@ -140,8 +158,10 @@ let g:cpp_class_scope_highlight = 1
 
 " Gitgutter, Ale, Syntastic, Nerdtree config {
 
-" let vim_markdown_preview_github = 1
+"let vim_markdown_preview_github = 1
 let NERDTreeShowHidden=1
+" let NERDTreeMapOpenInTab='<CR>'
+" let g:nerdtree_tabs_open_on_console_startup = 1
 let g:pymode_python = 'python3'
 
 " let g:gitgutter_highlight_lines = 0
@@ -152,7 +172,7 @@ let g:pymode_python = 'python3'
  " let g:syntastic_python_checkers = ['python3']
 " let g:syntastic_python_python_exec = '/usr/bin/env python3'
 
-let g:syntastic_python_flake8_exec = '/usr/bin/python3'
+" let g:syntastic_python_flake8_exec = '/usr/bin/python3'
 let g:syntastic_python_flake8_args = ['-m', 'flake8']
 
 
@@ -274,8 +294,10 @@ nnoremap `` gt
 " inoremap ~~ <esc>gT i
 nnoremap ~~ gT
 nnoremap <c-b> :Commentary<cr>
-nnoremap <localleader>o :NERDTreeToggle<cr>
-inoremap <localleader>o <esc>:NERDTreeToggle<cr>i
+" nnoremap <localleader>o :NERDTreeToggle<cr>
+nnoremap <localleader>o :NERDTreeTabsToggle<cr>
+inoremap <localleader>o <esc>:NERDTreeTabsToggle<cr>i
+" inoremap <localleader>o <esc>:NERDTreeToggle<cr>i
 " inoremap <c-x> <esc>:UndotreeToggle<cr>i
 " nnoremap <c-x> :UndotreeToggle<cr>
 nnoremap <f2> :UndotreeToggle<cr>
@@ -327,6 +349,8 @@ inoremap <expr> <CR> pumvisible() ? "<C-R>=<SID>ExpandSnippetOrReturn()<CR>" : "
 " Vim options {
 set title
 set colorcolumn=80
+
+set cmdheight=2
 " set expandtab
 " set tabstop=8
 " set shiftwidth=8
@@ -404,7 +428,7 @@ augroup autoformat_settings
     " autocmd FileType dart AutoFormatBuffer dartfmt
     autocmd FileType go AutoFormatBuffer gofmt
     " autocmd FileType gn AutoFormatBuffer gn
-    autocmd FileType python AutoFormatBuffer autopep8
+    autocmd FileType python AutoFormatBuffer black
     " autocmd FileType javascript AutoFormatBuffer js-beautify
     " javascript
 
@@ -422,7 +446,7 @@ augroup END
 
 " Fold options {
 
-let b:fold_options = { 'fold_blank': 0, 'fold_includes': 0, 'max_foldline_length': 'win', 'merge_comments' : 0, 'show_if_and_else': 0, 'strip_namespaces': 1, 'strip_template_arguments': 1, }
+let b:fold_options = {'fold_blank': 0, 'fold_includes': 0, 'max_foldline_length': 'win', 'merge_comments' : 0, 'show_if_and_else': 0, 'strip_namespaces': 1, 'strip_template_arguments': 1 ,}
 
 " }
 
